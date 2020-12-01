@@ -11,7 +11,7 @@ def det_sexe(secu):
         return("Non défini")
 
 
-def patient(nom = "Durand", prenom = "Nathalie", date = "01/01/1992", mail = "nathalie.durand@orange.fr", mdp = "null", secu = "118998", photo = "null"):
+def patient(nom = "Durand", prenom = "Nathalie", date = "01/01/1992", mail = "nathalie.durand@orange.fr", mdp = "null", secu = "218998", photo = "null"):
     
     source = open("../Ressources/squelette_patient.php", "r")
     squelette = source.read()
@@ -92,7 +92,7 @@ def medecin(nom = "Dupont",prenom = "Michel", adresse = "12 rue des lilas", mail
         
         # a ce stade, le pointeur pointe sur un symbole µ et on veut ajouter au fichier la variable input
         try:
-            page.write(str(eval(input)))
+            page.write(eval(input))
         except:
             page.write("null")
         pointeur += 1
