@@ -17,3 +17,11 @@ L'idée est de créer une plateforme en ligne regroupant différentes pathologie
 
 * Test Covid positif
 * avis de leur médecin traitant
+
+### Développement
+
+On a fait une plateforme codée en `html` et `PHP`. Les bases de données pour maintenir le tout en place sont en `sqlite3`. On utilise `Python` pour automatiser certains processus.
+
+### Sécurité
+
+Le site n'est pas sécurisé (mots de passe, informations des patients). Ce n'est pas trop dérangeant car ce n'est qu'une maquette pour montrer ce que l'on aimerait mettre en place dans un projet viable.
