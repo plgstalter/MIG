@@ -11,7 +11,7 @@ def det_sexe(secu):
         return("Non défini")
 
 
-def page_patient(nom = "Durand", prenom = "Nathalie", date = "01/01/1992", mail = "nathalie.durand@orange.fr", mdp = "0000", secu = "118998", photo = "null"):
+def patient(nom = "Durand", prenom = "Nathalie", date = "01/01/1992", mail = "nathalie.durand@orange.fr", mdp = "0000", secu = "118998", photo = "null"):
     
     source = open("../Ressources/squelette_patient.html", "r")
     squelette = source.read()
@@ -57,7 +57,7 @@ def page_patient(nom = "Durand", prenom = "Nathalie", date = "01/01/1992", mail 
 
     page.close()
 
-def page_medecin(nom = "Dupont",prenom = "Michel", adresse = "12 rue des lilas", mail = "michel.dupont@yahoo.fr", numero = "0678124568"):
+def medecin(nom = "Dupont",prenom = "Michel", adresse = "12 rue des lilas", mail = "michel.dupont@yahoo.fr", numero = "0678124568"):
     source = open("../Ressources/squelette_medecin.html", "r")
     squelette = source.read()
     source.close()
@@ -100,7 +100,3 @@ def page_medecin(nom = "Dupont",prenom = "Michel", adresse = "12 rue des lilas",
             break
 
     page.close()
-
-if __name__ == "__main__":
-    page_medecin()
-    page_patient()
