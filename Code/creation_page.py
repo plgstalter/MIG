@@ -11,13 +11,14 @@ def det_sexe(secu):
         return("Non défini")
 
 
-def patient(nom = "Durand", prenom = "Nathalie", date = "01/01/1992", mail = "nathalie.durand@orange.fr", mdp = "0000", secu = "118998", photo = "null"):
+def patient(nom = "Durand", prenom = "Nathalie", date = "01/01/1992", mail = "nathalie.durand@orange.fr", mdp = "null", secu = "118998", photo = "null"):
     
     source = open("../Ressources/squelette_patient.html", "r")
     squelette = source.read()
     source.close()
 
     fin = len(squelette)
+    secu = str(secu)
 
     page = open("../Pages/" + secu + ".html", "w", encoding="utf-8")
 
