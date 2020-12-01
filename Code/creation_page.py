@@ -100,3 +100,50 @@ def medecin(nom = "Dupont",prenom = "Michel", adresse = "12 rue des lilas", mail
             break
 
     page.close()
+
+def info(prenom, nom, mail, numero, adresse, naissance, secu):
+    source = open("../Ressources/squelette_info.html", "r")
+    squelette = source.read()
+    source.close()
+
+    fin = len(squelette)
+
+    page = open("../Pages/info." + nom + "." + prenom + ".html", "w", encoding="utf-8")
+
+    # on recopie le squelette jusqu'à tomber sur un symbole $
+
+    pointeur = 0
+    secu = str(secu)
+    sexe = det_sexe(secu)
+
+    while True: # on lit le squelette, caractère par caractère
+        # tant que l'on est pas dans une zone d'édition (délimitée par des $), on recopie le squelette
+        while (squelette[pointeur] != "$") and (pointeur != fin - 1):
+            page.write(squelette[pointeur])
+            pointeur += 1
+            if pointeur == fin:
+                break
+        # on est dans une zone d'édition
+        # on sélectionone le premier caractère de l'input demandé 
+        input = ""
+        pointeur += 1
+        
+        if pointeur == fin:
+                break
+
+        while (squelette[pointeur] != "$"):
+            input += squelette[pointeur]
+            pointeur += 1
+        
+        # a ce stade, le pointeur pointe sur un symbole $ et on veut ajouter au fichier la variable input
+        try:
+            page.write(eval(input))
+        except:
+            page.write("null")
+        pointeur += 1
+
+        if pointeur == fin:
+            break
+
+    page.close()
+
