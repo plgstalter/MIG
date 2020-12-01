@@ -92,7 +92,7 @@ def medecin(nom = "Dupont",prenom = "Michel", adresse = "12 rue des lilas", mail
         
         # a ce stade, le pointeur pointe sur un symbole µ et on veut ajouter au fichier la variable input
         try:
-            page.write(eval(input))
+            page.write(str(eval(input)))
         except:
             page.write("null")
         pointeur += 1
