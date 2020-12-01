@@ -7,7 +7,7 @@
         <body>
             <h1>FlowMed, le futur de la médecine</h1>
             <h2>Espace patient</h2>
-            Beinvenue sur votre espace, µprenomµ !
+            Beinvenue sur votre espace, Nathalie !
     
             <div style="width:1000px;">
                 <div style="width:300px; border: solid 1px #333333; float:left;">
@@ -15,11 +15,11 @@
                     ...
                 </div>
                 <div style="width:300px; border: solid 1px #333333; float:right;">
-                    µnomµ µprenomµ <br /> 
-                    µmailµ <br />
+                    Durand Nathalie <br /> 
+                    nathalie.durand@orange.fr <br />
                     <?php
-                    $sexe = 'µsexeµ';
-                    $date = 'µdateµ';
+                    $sexe = 'Femme';
+                    $date = '01/01/1992';
                     if ($sexe == "Homme") {
                         $chaine = 'Né le ';
                     }
@@ -36,5 +36,4 @@
               <div style="clear: both;"></div>
         </body>
     </html>
-
 
