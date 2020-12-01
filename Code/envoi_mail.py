@@ -28,7 +28,7 @@ def mail(nom, sexe, mail, statut, mdp):
     
     sender_email = "aug392020@gmail.com"
     receiver_email = mail
-    password = "je vais pas vous donner mon mdp lol"
+    password = "mdp"
 
     email = MIMEMultipart()
     email["From"] = sender_email
