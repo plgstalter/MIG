@@ -54,6 +54,6 @@ def ajout_patient(secu, nom, prenom, naissance, adresse, mail, numero, mdp = mdp
     conn.close()
 
     creation_page.patient(nom, prenom, naissance, mail, mdp, secu)
-    # envoi_mail.mail(nom, creation_page.det_sexe(secu), mail, "patient", mdp)
+    envoi_mail.mail(nom, creation_page.det_sexe(secu), mail, "patient", mdp)
 
 
