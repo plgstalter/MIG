@@ -55,9 +55,52 @@ def page_patient(nom = "Durand", prenom = "Nathalie", date = "01/01/1992", mail 
         if pointeur == fin:
             break
 
-    
     page.close()
 
+def page_medecin(nom = "Dupont",prenom = "Michel", adresse = "12 rue des lilas", mail = "michel.dupont@yahoo.fr", numero = "0678124568"):
+    source = open("../Ressources/squelette_medecin.html", "r")
+    squelette = source.read()
+    source.close()
 
-page_patient()
+    fin = len(squelette)
 
+    page = open("../Pages/med_" + nom + "." + prenom + ".html", "w", encoding="utf-8")
+
+    # on recopie le squelette jusqu'à tomber sur un symbole $
+
+    pointeur = 0
+
+    while True: # on lit le squelette, caractère par caractère
+        # tant que l'on est pas dans une zone d'édition (délimitée par des $), on recopie le squelette
+        while (squelette[pointeur] != "$") and (pointeur != fin - 1):
+            page.write(squelette[pointeur])
+            pointeur += 1
+            if pointeur == fin:
+                break
+        # on est dans une zone d'édition
+        # on sélectionone le premier caractère de l'input demandé 
+        input = ""
+        pointeur += 1
+        
+        if pointeur == fin:
+                break
+
+        while (squelette[pointeur] != "$"):
+            input += squelette[pointeur]
+            pointeur += 1
+        
+        # a ce stade, le pointeur pointe sur un symbole $ et on veut ajouter au fichier la variable input
+        try:
+            page.write(eval(input))
+        except:
+            page.write("null")
+        pointeur += 1
+
+        if pointeur == fin:
+            break
+
+    page.close()
+
+if __name__ == "__main__":
+    page_medecin()
+    page_patient()
