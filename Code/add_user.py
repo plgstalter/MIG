@@ -16,7 +16,7 @@ def mdp_rd(n = 12):
             mdp += str(rd.randint(0,9))
     return mdp
 
-def ajout_medecin(secu, nom, prenom, mdp, adresse, numero, mail):
+def ajout_medecin(secu, nom, prenom, adresse, numero, mail, mdp = mdp_rd()):
     conn = sqlite3.connect('../Ressources/Donnees/flowmed.db')
     cur = conn.cursor()
 

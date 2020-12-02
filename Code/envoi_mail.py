@@ -5,7 +5,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 def mail(secu, statut):
-    if statut == "medecin":
+    if statut == "médecin":
         # recupération des infos
         con = sqlite3.connect('../Ressources/Donnees/flowmed.db')
         cur = con.cursor()
@@ -34,7 +34,7 @@ def mail(secu, statut):
         con.close()
 
         nom, prenom, naissance, mdp, adresse, mail, numero = donnees
-
+    
     sexe = creation_page.det_sexe(secu)
     if sexe == "Homme":
         politesse = "Monsieur"
@@ -57,20 +57,45 @@ def mail(secu, statut):
                 
                 FlowMed, le Boeing de la médecine."""
     
-    sender_email = "flowmed.nepasrepondre@mail.fr"
-    receiver_email = mail
-    password = "rewusg4cUZSqDklSqDd1"
+    try:
+        sender_email = "flowmed.nepasrepondre@mail.fr"
+        receiver_email = mail
+        password = "rewusg4cUZSqDklSqDd1"
 
-    email = MIMEMultipart()
-    email["From"] = sender_email
-    email["To"] = receiver_email 
-    email["Subject"] = subject
+        email = MIMEMultipart()
+        email["From"] = sender_email
+        email["To"] = receiver_email 
+        email["Subject"] = subject
 
-    email.attach(MIMEText(body, "plain"))
+        email.attach(MIMEText(body, "plain"))
 
-    session = smtplib.SMTP('smtp.mail.fr', 587) #use outlook with port
-    session.starttls() #enable security
-    session.login(sender_email, password) #login with mail_id and password
-    text = email.as_string()
-    session.sendmail(sender_email, receiver_email, text)
-    session.quit()
+        session = smtplib.SMTP('smtp.mail.fr', 587) #use mail with port
+        session.starttls() #enable security
+        session.login(sender_email, password) #login with mail_id and password
+        text = email.as_string()
+        session.sendmail(sender_email, receiver_email, text)
+        session.quit()
+    except:
+        try:
+            print('adresse backup')
+            sender_email = "flowmed_backup@mail.fr"
+            receiver_email = mail
+            password = "Exf6oGIooKLBOy8wzt0H"
+
+            email = MIMEMultipart()
+            email["From"] = sender_email
+            email["To"] = receiver_email 
+            email["Subject"] = subject
+
+            email.attach(MIMEText(body, "plain"))
+
+            session = smtplib.SMTP('smtp.mail.fr', 587) #use mail with port
+            session.starttls() #enable security
+            session.login(sender_email, password) #login with mail_id and password
+            text = email.as_string()
+            session.sendmail(sender_email, receiver_email, text)
+            session.quit()
+        except:
+            print('mail non envoyé')
+        
+    

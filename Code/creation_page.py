@@ -4,7 +4,7 @@ def det_sexe(secu):
     '''
     renvoie le sexe d'un individu sous forme de string en fonction du numéro de sécu
     '''
-    n = int(secu[0])
+    n = int(str(secu)[0])
     if n == 1:
         return("Homme")
     elif n == 2:
