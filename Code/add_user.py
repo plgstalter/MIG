@@ -58,5 +58,3 @@ def ajout_patient(secu, nom, prenom, naissance, adresse, mail, numero, mdp = mdp
     creation_page.patient(secu)
     creation_page.info(secu)
     envoi_mail.mail(secu, "patient")
-
-def ajout_mdp(secu)
