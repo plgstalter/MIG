@@ -57,10 +57,12 @@ def mail(secu, statut):
                 
                 FlowMed, le Boeing de la médecine."""
     
+
+
     try:
-        sender_email = "flowmed.nepasrepondre@mail.fr"
+        sender_email = "flowflowmed@gmail.com"
         receiver_email = mail
-        password = "rewusg4cUZSqDklSqDd1"
+        password = "3bGCn2t9YjC7"
 
         email = MIMEMultipart()
         email["From"] = sender_email
@@ -69,7 +71,7 @@ def mail(secu, statut):
 
         email.attach(MIMEText(body, "plain"))
 
-        session = smtplib.SMTP('smtp.mail.fr', 587) #use mail with port
+        session = smtplib.SMTP('smtp.gmail.com', 587) #use mail with port
         session.starttls() #enable security
         session.login(sender_email, password) #login with mail_id and password
         text = email.as_string()
@@ -77,10 +79,10 @@ def mail(secu, statut):
         session.quit()
     except:
         try:
-            print('adresse backup')
-            sender_email = "flowmed_backup@mail.fr"
+            print('adresse backup 1')
+            sender_email = "flowmed.nepasrepondre@mail.fr"
             receiver_email = mail
-            password = "Exf6oGIooKLBOy8wzt0H"
+            password = "rewusg4cUZSqDklSqDd1"
 
             email = MIMEMultipart()
             email["From"] = sender_email
@@ -96,6 +98,26 @@ def mail(secu, statut):
             session.sendmail(sender_email, receiver_email, text)
             session.quit()
         except:
-            print('mail non envoyé')
+            try:
+                print('adresse backup 2')
+                sender_email = "flowmed_backup@mail.fr"
+                receiver_email = mail
+                password = "Exf6oGIooKLBOy8wzt0H"
+
+                email = MIMEMultipart()
+                email["From"] = sender_email
+                email["To"] = receiver_email 
+                email["Subject"] = subject
+
+                email.attach(MIMEText(body, "plain"))
+
+                session = smtplib.SMTP('smtp.mail.fr', 587) #use mail with port
+                session.starttls() #enable security
+                session.login(sender_email, password) #login with mail_id and password
+                text = email.as_string()
+                session.sendmail(sender_email, receiver_email, text)
+                session.quit()
+            except:
+                print('mail non envoyé')
+            
         
-    
