@@ -19,22 +19,16 @@
                     µmailµ <br />
                     <?php
                     $sexe = µsexeµ;
-                    function phrase_naissance() {
-                        global $sexe;
-                        if ($sexe == "Homme") {
-                            $chaine = 'Né le ';
-                        }
-                        elseif ($sexe == "Femme") {
-                            $chaine = 'Née le ';
-                        }
-                        else {
-                            $chaine = 'Né.e le ';
-                        }
-                        return $chaine;
-                        
-                    }
-                    $chaine = phrase_naissance();
                     $date = µdateµ;
+                    if ($sexe == "Homme") {
+                        $chaine = 'Né le ';
+                    }
+                    elseif ($sexe == "Femme") {
+                        $chaine = 'Née le ';
+                    }
+                    else {
+                        $chaine = 'Né.e le ';
+                    }
                     echo  $chaine, $date;
                     ?>
                 </div>
