@@ -28,7 +28,7 @@ def patient(secu):
     con = sqlite3.connect('../Ressources/Donnees/flowmed.db')
     cur = con.cursor()
 
-    requete_sql = f'SELECT * FROM patients WHERE secu={secu}'
+    requete_sql = f'SELECT * FROM patients WHERE secu={secu};'
 
     cur.execute(requete_sql)
     con.commit()
@@ -90,7 +90,7 @@ def medecin(secu):
     con = sqlite3.connect('../Ressources/Donnees/flowmed.db')
     cur = con.cursor()
 
-    requete_sql = f'SELECT * FROM medecins WHERE secu={secu}'
+    requete_sql = f'SELECT * FROM medecins WHERE secu={secu};'
 
     cur.execute(requete_sql)
     con.commit()
@@ -150,7 +150,7 @@ def info(secu):
     con = sqlite3.connect('../Ressources/Donnees/flowmed.db')
     cur = con.cursor()
 
-    requete_sql = f'SELECT * FROM patients WHERE secu={secu}'
+    requete_sql = f'SELECT * FROM patients WHERE secu={secu};'
 
     cur.execute(requete_sql)
     con.commit()
