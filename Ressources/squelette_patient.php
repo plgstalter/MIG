@@ -7,7 +7,7 @@
         <body>
             <h1>FlowMed, le futur de la médecine</h1>
             <h2>Espace patient</h2>
-            Beinvenue sur votre espace, $prenom$ !
+            Beinvenue sur votre espace, µprenomµ !
     
             <div style="width:1000px;">
                 <div style="width:300px; border: solid 1px #333333; float:left;">
@@ -15,8 +15,8 @@
                     ...
                 </div>
                 <div style="width:300px; border: solid 1px #333333; float:right;">
-                    $nom$ $prenom$ <br /> 
-                    $mail$ <br />
+                    µnomµ µprenomµ <br /> 
+                    µmailµ <br />
                     <?php
                     $sexe = µsexeµ;
                     function phrase_naissance() {
