@@ -1,3 +1,4 @@
+
 <DOCTYPE html>
     <html lang="fr">
         <head>
@@ -7,34 +8,31 @@
         <body>
             <h1>FlowMed, le futur de la médecine</h1>
             <h2>Espace patient</h2>
-            Beinvenue sur votre espace, µprenomµ !
+            Bienvenue sur votre espace, $prenom$ !
     
+            <br />
+            <br />
             <div style="width:1000px;">
-                <div style="width:300px; border: solid 1px #333333; float:left;">
-                    <p>Mes questionnaires</p>
-                    ...
+                <div style="width:200px; height:50px; text-align:center; border: solid 1px #333333; float:left;">
+                    <p>
+                        <a href="">Mes questionnaires</a>
+                    </p>
                 </div>
-                <div style="width:300px; border: solid 1px #333333; float:right;">
-                    µnomµ µprenomµ <br /> 
-                    µmailµ <br />
-                    <?php
-                    $sexe = 'µsexeµ';
-                    $date = 'µdateµ';
-                    if ($sexe == "Homme") {
-                        $chaine = 'Né le ';
-                    }
-                    elseif ($sexe == "Femme") {
-                        $chaine = 'Née le ';
-                    }
-                    else {
-                        $chaine = 'Né.e le ';
-                    }
-                    echo  $chaine, $date;
-                    ?>
+                <div style="width:300px; height:100px; border: solid 1px #333333; float:right;">
+                    <br/>
+                    $nom$ $prenom$ <br /> 
+                    $mail$ <br />
+                    Né le : $date$ <br />
                 </div>
-              </div>
-              <div style="clear: both;"></div>
+                <br />
+                <br />
+                <br />
+                <br />
+                <div style="width:200px; height:50px; text-align:center; border: solid 1px #333333; float:left;">
+                    <p>
+                        <a href="">Mon suivi</a>
+                    </p>
+                </div>
+            </div>
         </body>
     </html>
-
-
