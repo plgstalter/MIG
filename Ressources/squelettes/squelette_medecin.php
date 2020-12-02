@@ -39,19 +39,21 @@
                         <p> 
                             Mes patients <br />
                             <?php
-                            $flowmed = new SQLite3('../Ressources/Donnees/flowmed.db');  // introduction de la base de données
+                            $flowmed = new SQLite3('../Donnees/flowmed.db');  // introduction de la base de données
                             $statement = $flowmed -> prepare("SELECT nom, prenom FROM patients JOIN maladies ON patient = secu WHERE medecin = :imaginary_nom");
-                            $statement -> bindValue(':imaginary_nom', $_SESSION['secu']);
+                            $statement -> bindValue(':imaginary_nom', µsecuµ);
                             $result = $statement -> execute();
+                            /*
                             if ($result == 0) {
                                 echo "Aucun patient pour le moment";
                             }
                             else {
-                                while ($row = $result->fetchArray()) {
-                                    $nom = $row['nom'];
-                                    $prenom = $row['prenom'];
-                                    echo $nom.' '.$prenom.'<br />';
-                                }
+                                */
+                            while ($row = $result->fetchArray()) {
+                                $nom = $row['nom'];
+                                $prenom = $row['prenom'];
+                                //echo '<a href="questionnaire'.$secu.'.php"> '.$nom.' '.$prenom.'</a><br />';
+                                echo $nom.' '.$prenom.' <br />';
                             }
                             ?>
                         </p>
@@ -59,4 +61,7 @@
                 </div>
         </div>
     </body>
+    <?php
+    $flowmed = null;
+    ?>
 </html>
