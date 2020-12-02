@@ -7,12 +7,18 @@
         <body>
             <h1>FlowMed, le futur de la médecine</h1>
             <h2>Espace patient</h2>
-            Beinvenue sur votre espace, µprenomµ !
+            Bienvenue sur votre espace, µprenomµ !
     
             <div style="width:1000px;">
                 <div style="width:300px; border: solid 1px #333333; float:left;">
-                    <p>Mes questionnaires</p>
-                    ...
+                    <p>
+                        <a href="">Mes questionnaires</a>
+                    </p>
+                </div>
+                <div style="width:300px; border: solid 1px #333333; float:left;">
+                    <p>
+                        <a href="">Mon suivi</a>
+                    </p>
                 </div>
                 <div style="width:300px; border: solid 1px #333333; float:right;">
                     µnomµ µprenomµ <br /> 
