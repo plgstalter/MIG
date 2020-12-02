@@ -3,6 +3,7 @@ import random as rd
 import string
 import envoi_mail
 import creation_page
+from gestion_mdp import hacher
 
 def mdp_rd(n = 12):
     mdp = ""
@@ -20,7 +21,7 @@ def ajout_medecin(secu, nom, prenom, adresse, numero, mail, mdp = mdp_rd()):
     conn = sqlite3.connect('../Ressources/Donnees/flowmed.db')
     cur = conn.cursor()
 
-    params = (secu, nom, prenom, mdp, "'" + adresse + "'", numero, "'" + mail + "'")
+    params = (secu, nom, prenom, hacher(mdp), "'" + adresse + "'", numero, "'" + mail + "'")
 
     sqlite_insert_query = "INSERT INTO medecins VALUES (?,?,?,?,?,?,?)"
 
@@ -44,7 +45,7 @@ def ajout_patient(secu, nom, prenom, naissance, adresse, mail, numero, mdp = mdp
     cur = conn.cursor()
     secu = str(secu)
 
-    params = (secu, nom, prenom, naissance, mdp, "'" + adresse + "'", "'" + mail + "'", numero)
+    params = (secu, nom, prenom, naissance, hacher(mdp), "'" + adresse + "'", "'" + mail + "'", numero)
 
     sqlite_insert_query = "INSERT INTO patients VALUES (?,?,?,?,?,?,?,?)"
 
@@ -55,6 +56,7 @@ def ajout_patient(secu, nom, prenom, naissance, adresse, mail, numero, mdp = mdp
     conn.close()
 
     creation_page.patient(secu)
+    creation_page.info(secu)
     envoi_mail.mail(secu, "patient")
 
 

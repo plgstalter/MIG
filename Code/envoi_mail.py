@@ -119,5 +119,3 @@ def mail(secu, statut):
                 session.quit()
             except:
                 print('mail non envoyé')
-            
-        
