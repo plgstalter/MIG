@@ -11,8 +11,9 @@ elseif ($_REQUEST['mail'] == '') {
 }
 $_SESSION['mail'] = "'".$_REQUEST['mail']."'";
 $flowmed = new SQLite3('../Ressources/Donnees/flowmed.db');  // introduction de la base de données
-$statement = $flowmed -> prepare("SELECT secu, mdp FROM patients WHERE mail = :imaginary_word");
-$statement -> bindValue(':imaginary_word', $_SESSION['mail']);
+$statement = $flowmed -> prepare("SELECT secu, mdp FROM :imaginary_table WHERE mail = :imaginary_mail");
+$statement -> bindValue(':imaginary_table', $_POST['personne'].'s');
+$statement -> bindValue(':imaginary_mail', $_SESSION['mail']);
 $result = $statement -> execute();
 if ($result == 0) {
     $_SESSION['erreur'] = 'mauvais login. Veuillez réessayer';
@@ -21,7 +22,7 @@ if ($result == 0) {
 while ($row = $result->fetchArray()) {
     $_SESSION['secu'] = $row['secu'];
     $_SESSION['mdp'] = $row['mdp'];
-    $url = '../Ressources/Pages/'.$_SESSION['secu'].'.php';
+    $url = '../Ressources/Pages/'.$_POST['personne'].'s'.$_SESSION['secu'].'.php';
 }
 if ($_REQUEST['mdp'] == $_SESSION['mdp']) {
     $_SESSION['erreur'] = '';

@@ -14,7 +14,7 @@
                     <h2>Espace patient</h2>
                     <p>Bienvenue sur votre espace, µprenomµ !</p>
                 </div>
-                <div style="float:right">
+                <div style="width:200px float:right">
                     <a href="../../Code/logout.php"> Déconnexion</a>
                 </div>
         
