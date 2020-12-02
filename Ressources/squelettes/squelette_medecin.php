@@ -18,7 +18,8 @@
                 <div style="width:1000px; background-color: rgb(255, 222, 209)">
                     <div class = "div3" style="float:left;">
                         <p> 
-                            <a href="">Les alertes de mes patients</a>
+                            Les alertes de mes patients <br />
+                            Aucune alerte non traitée à cet instant.
                         </p>
                     </div>
                     <div class = "div3" style="float:left; text-align:left; float:right;">
@@ -36,7 +37,23 @@
                     <br />
                     <div class = "div3" style="float:left;">
                         <p> 
-                            <a href="">Mes patients</a>
+                            Mes patients <br />
+                            <?php
+                            $flowmed = new SQLite3('../Ressources/Donnees/flowmed.db');  // introduction de la base de données
+                            $statement = $flowmed -> prepare("SELECT nom, prenom FROM patients JOIN maladies ON patient = secu WHERE medecin = :imaginary_nom");
+                            $statement -> bindValue(':imaginary_nom', $_SESSION['secu']);
+                            $result = $statement -> execute();
+                            if ($result == 0) {
+                                echo "Aucun patient pour le moment";
+                            }
+                            else {
+                                while ($row = $result->fetchArray()) {
+                                    $nom = $row['nom'];
+                                    $prenom = $row['prenom'];
+                                    echo $nom.' '.$prenom.'<br />';
+                                }
+                            }
+                            ?>
                         </p>
                     </div>
                 </div>

@@ -22,7 +22,7 @@
                 <div style="width:1000px; border:1px; background-color: rgb(255, 222, 209); background-position: center;">
                     <div class = "div3" style="float:left;">
                         <p>
-                            <a href="">Mes questionnaires</a>
+                            <a href="../../Code/questionnaire-covid.php">Mes questionnaires</a>
                         </p>
                     </div>
                     <div class = "div3" style="text-align:left;float:right">
