@@ -24,7 +24,7 @@
                         <p>
                         µnomµ µprenomµ <br /> 
                         µmailµ <br />
-                        Né le : µdateµ <br />
+                        Né le : µnaissanceµ <br />
                         </p>
                     </div>
                     <br />
