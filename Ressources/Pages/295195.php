@@ -10,11 +10,16 @@
             <h1>FlowMed, le futur de la médecine</h1>
             
             <div class="div1" style="height:350px">
-                <h2>Espace patient</h2>
-                <p>Bienvenue sur votre espace, Nathalie !</p>
+                <div style="float:left">
+                    <h2>Espace patient</h2>
+                    <p>Bienvenue sur votre espace, Nathalie !</p>
+                </div>
+                <div style="float:right">
+                    <a href="../../Code/logout.php"> Déconnexion</a>
+                </div>
         
                 <br />
-                <div style="width:1000px; border:1px; background-position: center;">
+                <div style="width:1000px; border:1px; background-color: rgb(255, 222, 209); background-position: center;">
                     <div class = "div3" style="float:left;">
                         <p>
                             <a href="">Mes questionnaires</a>
@@ -24,7 +29,20 @@
                         <p>
                         Durand Nathalie <br /> 
                         pierre-louis.gstalter@mines-paristech.fr <br />
-                        Né le : 15/02/2012 <br />
+                        <?php
+                        $sexe = 'Femme';
+                        $date = '15/02/2012';
+                        if ($sexe == "Homme") {
+                            $chaine = 'Né le ';
+                        }
+                        elseif ($sexe == "Femme") {
+                            $chaine = 'Née le ';
+                        }
+                        else {
+                            $chaine = 'Né.e le ';
+                        }
+                        echo $chaine, $date;
+                        ?>
                         </p>
                     </div>
                     <br />
