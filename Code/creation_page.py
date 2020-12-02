@@ -1,3 +1,5 @@
+import sqlite3
+
 def det_sexe(secu):
     '''
     renvoie le sexe d'un individu sous forme de string en fonction du numéro de sécu
@@ -10,9 +12,34 @@ def det_sexe(secu):
     else:
         return("Non défini")
 
+def enlever_quotes(donnees):
+    res = []
+    for donnee in donnees:
+        if str(donnee)[0]=="'":
+            res.append(donnee[1:len(donnee) - 1])
+        else:
+            res.append(donnee)
+    return(tuple(res))
 
-def patient(nom = "Durand", prenom = "Nathalie", date = "01/01/1992", mail = "nathalie.durand@orange.fr", mdp = "null", secu = "218998", photo = "null"):
-    
+
+
+def patient(secu):
+    # récupération des infos
+    con = sqlite3.connect('../Ressources/Donnees/flowmed.db')
+    cur = con.cursor()
+
+    requete_sql = f'SELECT * FROM patients WHERE secu={secu}'
+
+    cur.execute(requete_sql)
+    con.commit()
+
+
+    donnees = enlever_quotes(cur.fetchall()[0][1:]) # on récupère un tuple avec toutes les info du patient
+    cur.close()
+    con.close()
+
+    nom, prenom, naissance, mdp, adresse, mail, numero = donnees
+
     source = open("../Ressources/squelette_patient.php", "r")
     squelette = source.read()
     source.close()
@@ -35,20 +62,20 @@ def patient(nom = "Durand", prenom = "Nathalie", date = "01/01/1992", mail = "na
             if pointeur == fin:
                 break
         # on est dans une zone d'édition
-        # on sélectionone le premier caractère de l'input demandé 
-        input = ""
+        # on sélectionone le premier caractère de l'entree demandé 
+        entree = ""
         pointeur += 1
         
         if pointeur == fin:
                 break
 
         while (squelette[pointeur] != "µ"):
-            input += squelette[pointeur]
+            entree += squelette[pointeur]
             pointeur += 1
         
-        # a ce stade, le pointeur pointe sur un symbole µ et on veut ajouter au fichier la variable input
+        # a ce stade, le pointeur pointe sur un symbole µ et on veut ajouter au fichier la variable entree
         try:
-            page.write(eval(input))
+            page.write(eval(entree))
         except:
             page.write("null")
         pointeur += 1
@@ -58,7 +85,23 @@ def patient(nom = "Durand", prenom = "Nathalie", date = "01/01/1992", mail = "na
 
     page.close()
 
-def medecin(nom = "Dupont",prenom = "Michel", adresse = "12 rue des lilas", mail = "michel.dupont@yahoo.fr", numero = "0678124568"):
+def medecin(secu):
+    # recupération des infos
+    con = sqlite3.connect('../Ressources/Donnees/flowmed.db')
+    cur = con.cursor()
+
+    requete_sql = f'SELECT * FROM medecins WHERE secu={secu}'
+
+    cur.execute(requete_sql)
+    con.commit()
+
+    donnees = enlever_quotes(cur.fetchall()[0][1:]) # on récupère un tuple avec toutes les info du patient
+    cur.close()
+    con.close()
+
+    nom, prenom, mdp, adresse, numero, mail = donnees
+
+
     source = open("../Ressources/squelette_medecin.php", "r")
     squelette = source.read()
     source.close()
@@ -79,20 +122,20 @@ def medecin(nom = "Dupont",prenom = "Michel", adresse = "12 rue des lilas", mail
             if pointeur == fin:
                 break
         # on est dans une zone d'édition
-        # on sélectionone le premier caractère de l'input demandé 
-        input = ""
+        # on sélectionone le premier caractère de l'entree demandé 
+        entree = ""
         pointeur += 1
         
         if pointeur == fin:
                 break
 
         while (squelette[pointeur] != "µ"):
-            input += squelette[pointeur]
+            entree += squelette[pointeur]
             pointeur += 1
         
-        # a ce stade, le pointeur pointe sur un symbole µ et on veut ajouter au fichier la variable input
+        # a ce stade, le pointeur pointe sur un symbole µ et on veut ajouter au fichier la variable entree
         try:
-            page.write(eval(input))
+            page.write(eval(entree))
         except:
             page.write("null")
         pointeur += 1
@@ -102,7 +145,22 @@ def medecin(nom = "Dupont",prenom = "Michel", adresse = "12 rue des lilas", mail
 
     page.close()
 
-def info(prenom, nom, mail, numero, adresse, naissance, secu):
+def info(secu):
+    # récupération des infos
+    con = sqlite3.connect('../Ressources/Donnees/flowmed.db')
+    cur = con.cursor()
+
+    requete_sql = f'SELECT * FROM patients WHERE secu={secu}'
+
+    cur.execute(requete_sql)
+    con.commit()
+
+    donnees = enlever_quotes(cur.fetchall()[0][1:]) # on récupère un tuple avec toutes les info du patient
+    cur.close()
+    con.close()
+
+    nom, prenom, naissance, mdp, adresse, mail, numero = donnees
+
     source = open("../Ressources/squelette_info.php", "r")
     squelette = source.read()
     source.close()
@@ -127,20 +185,20 @@ def info(prenom, nom, mail, numero, adresse, naissance, secu):
             if pointeur == fin:
                 break
         # on est dans une zone d'édition
-        # on sélectionone le premier caractère de l'input demandé 
-        input = ""
+        # on sélectionone le premier caractère de l'entree demandé 
+        entree = ""
         pointeur += 1
         
         if pointeur == fin:
                 break
 
         while (squelette[pointeur] != "µ"):
-            input += squelette[pointeur]
+            entree += squelette[pointeur]
             pointeur += 1
         
-        # a ce stade, le pointeur pointe sur un symbole µ et on veut ajouter au fichier la variable input
+        # a ce stade, le pointeur pointe sur un symbole µ et on veut ajouter au fichier la variable entree
         try:
-            page.write(eval(input))
+            page.write(eval(entree))
         except:
             page.write("null")
         pointeur += 1

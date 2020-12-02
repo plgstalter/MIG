@@ -1,10 +1,41 @@
-import email, smtplib
+import email, smtplib, sqlite3, creation_page
 from email import encoders
 from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-def mail(nom, sexe, mail, statut, mdp):
+def mail(secu, statut):
+    if statut == "medecin":
+        # recupération des infos
+        con = sqlite3.connect('../Ressources/Donnees/flowmed.db')
+        cur = con.cursor()
+
+        requete_sql = f'SELECT * FROM medecins WHERE secu={secu}'
+
+        cur.execute(requete_sql)
+        con.commit()
+
+        donnees = creation_page.enlever_quotes(cur.fetchall()[0][1:]) # on récupère un tuple avec toutes les info du patient
+        cur.close()
+        con.close()
+        nom, prenom, mdp, adresse, numero, mail = donnees
+    else: # on suppose que c un patient
+        # récupération des infos
+        con = sqlite3.connect('../Ressources/Donnees/flowmed.db')
+        cur = con.cursor()
+
+        requete_sql = f'SELECT * FROM patients WHERE secu={secu}'
+
+        cur.execute(requete_sql)
+        con.commit()
+
+        donnees = creation_page.enlever_quotes(cur.fetchall()[0][1:]) # on récupère un tuple avec toutes les info du patient
+        cur.close()
+        con.close()
+
+        nom, prenom, naissance, mdp, adresse, mail, numero = donnees
+
+    sexe = creation_page.det_sexe(secu)
     if sexe == "Homme":
         politesse = "Monsieur"
     elif sexe == "Femme":
