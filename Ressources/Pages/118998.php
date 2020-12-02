@@ -18,8 +18,8 @@
                     Durand Nathalie <br /> 
                     nathalie.durand@orange.fr <br />
                     <?php
-                    $sexe = Homme;
-                    $date = 01/01/1992;
+                    $sexe = 'Homme';
+                    $date = '01/01/1992';
                     if ($sexe == "Homme") {
                         $chaine = 'Né le ';
                     }
