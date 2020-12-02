@@ -47,7 +47,7 @@ def patient(secu):
     fin = len(squelette)
     secu = str(secu)
 
-    page = open(f'../Ressources/Pages/{secu}.php', "w", encoding="utf-8")
+    page = open(f'../Ressources/Pages/patient.{secu}.php', "w", encoding="utf-8")
 
     # on recopie le squelette jusqu'à tomber sur un symbole µ
 
@@ -108,7 +108,7 @@ def medecin(secu):
 
     fin = len(squelette)
 
-    page = open("../Ressources/Pages/med_" + nom + "." + prenom + ".php", "w", encoding="utf-8")
+    page = open(f"../Ressources/Pages/medecin.{secu}.php", "w", encoding="utf-8")
 
     # on recopie le squelette jusqu'à tomber sur un symbole µ
 
@@ -167,7 +167,7 @@ def info(secu):
 
     fin = len(squelette)
 
-    page = open("../Ressources/Pages/info." + nom + "." + prenom + ".php", "w", encoding="utf-8")
+    page = open(f"../Ressources/Pages/info.{secu}.php", "w", encoding="utf-8")
 
     # on recopie le squelette jusqu'à tomber sur un symbole µ
 
