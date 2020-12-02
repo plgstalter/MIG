@@ -26,9 +26,9 @@ def mail(nom, sexe, mail, statut, mdp):
                 
                 FlowMed, le Boeing de la médecine."""
     
-    sender_email = "aug392020@gmail.com"
+    sender_email = "flowmed.nepasrepondre@mail.fr"
     receiver_email = mail
-    password = "je vais pas vous donner mon mdp lol"
+    password = "rewusg4cUZSqDklSqDd1"
 
     email = MIMEMultipart()
     email["From"] = sender_email
@@ -37,7 +37,7 @@ def mail(nom, sexe, mail, statut, mdp):
 
     email.attach(MIMEText(body, "plain"))
 
-    session = smtplib.SMTP('smtp.gmail.com', 587) #use outlook with port
+    session = smtplib.SMTP('smtp.mail.fr', 587) #use outlook with port
     session.starttls() #enable security
     session.login(sender_email, password) #login with mail_id and password
     text = email.as_string()
