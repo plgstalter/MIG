@@ -28,14 +28,10 @@ if ($_REQUEST['mdp_2'] != $_REQUEST['mdp']) {
     $_SESSION['erreur'] = 'mot de passe différent';
     header('location: register.php');
 }
-if ($_REQUEST['mdp'] == $_SESSION['mdp']) {
-    $_SESSION['erreur'] = '';
-    $_SESSION['connecte'] = TRUE;
-    header('location: '.$url); // si on est bon, on envoie sur la page du patient
-}
-else {
-    $_SESSION['erreur'] = 'mauvais login. Veuillez réessayer';
-    header("location: register.php"); // on réessaye de se connecter
-}
+$_SESSION['erreur'] = '';
+$_SESSION['connecte'] = TRUE;
+$command = escapeshellcmd('python python_php/ajout_mdp.py '.$_REQUEST['mdp'].' '.$_SESSION['secu']);
+$output = shell_exec($command);
+header('location: '.$url); // si on est bon, on envoie sur la page du patient
 $flowmed = null; // on se sépare de la base de données à la fin de la page
 ?>

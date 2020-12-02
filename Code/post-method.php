@@ -24,7 +24,9 @@ while ($row = $result->fetchArray()) {
     $_SESSION['mdp'] = $row['mdp'];
     $url = '../Ressources/Pages/'.$_POST['personne'].'s'.$_SESSION['secu'].'.php';
 }
-if ($_REQUEST['mdp'] == $_SESSION['mdp']) {
+$command = escapeshellcmd('python python_php/hache_mdp.py '.$_REQUEST['mdp']); // on hache le mdp pour le comparer
+$mdp_hache = shell_exec($command);
+if ($mdp_hache == $_SESSION['mdp']) {
     $_SESSION['erreur'] = '';
     $_SESSION['connecte'] = TRUE;
     header('location: '.$url); // si on est bon, on envoie sur la page du patient
