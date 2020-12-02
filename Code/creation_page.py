@@ -11,7 +11,7 @@ def det_sexe(secu):
         return("Non défini")
 
 
-def patient(nom = "Durand", prenom = "Nathalie", date = "01/01/1992", mail = "nathalie.durand@orange.fr", mdp = "null", secu = "118998", photo = "null"):
+def patient(nom = "Durand", prenom = "Nathalie", date = "01/01/1992", mail = "nathalie.durand@orange.fr", mdp = "null", secu = "218998", photo = "null"):
     
     source = open("../Ressources/squelette_patient.php", "r")
     squelette = source.read()
@@ -20,7 +20,7 @@ def patient(nom = "Durand", prenom = "Nathalie", date = "01/01/1992", mail = "na
     fin = len(squelette)
     secu = str(secu)
 
-    page = open("../Pages/" + secu + ".php", "w", encoding="utf-8")
+    page = open(f'../Pages/{secu}.php', "w", encoding="utf-8")
 
     # on recopie le squelette jusqu'à tomber sur un symbole µ
 
@@ -149,4 +149,3 @@ def info(prenom, nom, mail, numero, adresse, naissance, secu):
             break
 
     page.close()
-
