@@ -1,6 +1,4 @@
 import email, smtplib, sqlite3, creation_page
-from email import encoders
-from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
@@ -49,8 +47,7 @@ def mail(secu, statut):
     subject = f"Ouverture d'un compte {statut} sur la plateforme FlowMed"
 
     body = f"""{politesse} {nom},
-                un compte {statut} a été ouvert à votre nom sur la plateforme FlowMed
-                avec le mot de passe suivant : {mdp}.
+                un compte {statut} a été ouvert à votre nom sur la plateforme FlowMed.
                 
                 Pour confirmer votre compte, connectez-vous à la plateforme avec 
                 ce mot de passe que vous serez alors en mesure de changer.
