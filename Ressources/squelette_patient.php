@@ -18,8 +18,8 @@
                     µnomµ µprenomµ <br /> 
                     µmailµ <br />
                     <?php
-                    $sexe = µsexeµ;
-                    $date = µdateµ;
+                    $sexe = 'µsexeµ';
+                    $date = 'µdateµ';
                     if ($sexe == "Homme") {
                         $chaine = 'Né le ';
                     }
