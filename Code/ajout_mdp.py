@@ -5,7 +5,7 @@ import sqlite3, sys, gestion_mdp
 conn = sqlite3.connect('../Ressources/Donnees/flowmed.db')
 cur = conn.cursor()
 
-requete_sqlite = f"UPDATE patients SET mdp = {gestion_mdp.hacher(sys.argv[1])} WHERE secu = {sys.argv[2]}"
+requete_sqlite = f"UPDATE patients SET mdp = '{gestion_mdp.hacher(sys.argv[1])}' WHERE (secu = {sys.argv[2]});"
 
 cur.execute(requete_sqlite)
 conn.commit()
