@@ -5,7 +5,7 @@ En partant de l'application Covidom, on cherche à approfondir. Le travail est d
 * un algorithme "apprenant" qui, en ayant accès aux données de Covidom, permettra de trier à l'avance les "fausses" alertes
 * une plateforme élargie, sorte de hub permettant de traiter différentes pathologies
 
-## Machine Learnning
+## Machine Learning
 
 cf Auguste et Jean-Édouard
 
