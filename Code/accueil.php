@@ -4,7 +4,7 @@
         <meta charset="utf-8"/>
         <title>FlowMed</title>
         <?php
-        $flowmed = new SQLite3('../Ressources/Donnes/flowmed.db');// introduction de la base de données
+        $flowmed = new SQLite3('../Ressources/Donnees/flowmed.db');// introduction de la base de données
         ?>
     </head>
     <body>

@@ -1,10 +1,14 @@
 <?php
-session_start();
+include session;
 $_SESSION['compteur'] = 0; //compteur pour voir le nombre d'essais
 // if ($_SESSION['compteur'] > 9) {
 //     header("wrong.html");
 // }
+if ($_REQUEST['mail'] == '') {
+
+}
 $_SESSION['mail'] = $_REQUEST['mail'];
+
 $mdp = $_REQUEST['mdp'];
 $flowmed = new SQLite3('../Ressources/Donnees/flowmed.db');  // introduction de la base de données
 $statement = $flowmed -> prepare("SELECT secu, mdp FROM patients WHERE mail = :imaginary_word");
@@ -16,6 +20,7 @@ while ($row = $result->fetchArray()) {
 }
 
 if ($mdp == $_SESSION['mdp']) {
+    $_SESSION['connecte'] = TRUE;
     $statement_2 = $flowmed -> prepare("SELECT * FROM patients WHERE secu = :imaginary_word");
     $statement_2 -> bindValue(':imaginary_word', $secu);
     $result_2 = $statement_2 -> execute();
