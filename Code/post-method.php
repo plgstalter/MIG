@@ -20,10 +20,9 @@ if ($mdp == $password) {
         $prenom = $row['prenom'];
         $naissance = $row['naissance'];
         $adresse = $row['adresse'];
-    }
 }
 else {
-    // erreur : accès à la page interdit ! 
+    header("wrong.php");
 }
 ?>
 
