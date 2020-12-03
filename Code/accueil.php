@@ -12,10 +12,11 @@
         <h1>
             FlowMed, le futur de la médecine
         </h1>
-        <p>
-            Bienvenue sur FlowMed ! Pour accéder à la plateforme en ligne, veuillez vous identifier.
-        </p>
+
         <div class="div1">
+            <p>
+                Bienvenue sur FlowMed ! Pour accéder à la plateforme en ligne, veuillez vous identifier.
+            </p>
             <div>
                 <div style = "width:350px; border: solid 1px #333333; " align = "left">
                     <div style = "background-color:#333333; color:#FFFFFF; padding:3px;"><b>Login</b></div>
