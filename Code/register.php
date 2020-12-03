@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8"/>
         <title>FlowMed</title>
+        <link rel="stylesheet" href="style.css">
         <?php
         $flowmed = new SQLite3('../Ressources/Donnees/flowmed.db');// introduction de la base de données
         ?>
