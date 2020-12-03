@@ -29,6 +29,7 @@ if ($mdp == $_SESSION['mdp']) {
         // $_SESSION['prenom'] = $row['prenom'];
         // $_SESSION['naissance'] = $row['naissance'];
         // $_SESSION['adresse'] = $row['adresse'];
+    }
     header("location: ../Pages/".$_SESSION['secu'].".php"); // si on est bon, on envoie sur la page du patient
 }
 else {

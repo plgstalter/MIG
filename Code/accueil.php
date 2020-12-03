@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <DOCTYPE html>
 <html lang="fr">
     <head>
@@ -12,6 +15,34 @@
         <h1>
             FlowMed, le futur de la médecine
         </h1>
+<<<<<<< HEAD
+        <p>
+            Bienvenue sur FlowMed ! Pour accéder à la plateforme en ligne, veuillez vous identifier.
+        </p>
+        <div>
+            <div style = "width:350px; border: solid 1px #333333; " align = "left">
+                <div style = "background-color:#333333; color:#FFFFFF; padding:3px;"><b>Login</b></div>
+                    
+                <div style = "margin:30px" align="right">
+                    <?php
+                    if (isset($_SESSION['compteur'])) {
+                        echo "Erreur dans vos entrées. Veuillez réessayer. <br />";
+                    }
+                    ?>
+                    <form action = "post-method.php" method = "post">
+                    <!-- Je suis ... 
+                    <input type="checkbox" name="personne[]" value="medecin">
+                    <label for="personne_1"> médecin </label>
+                    <input type="checkbox" name="personne[]" value="patient">
+                    <label for="personne_2"> patient </label><br> -->
+                    <label>e-mail :      </label><input type = "text" name = "mail" class = "box"/><br /><br />
+                    <label>mot de passe :</label><input type = "password" name = "mdp" class = "box" /><br/><br />
+                    <input type = "submit" value = " Submit "/><br />
+                    </form>  
+                    
+                    Pas encore de compte ? <a href="register.php"> S'inscire </a>
+                    
+=======
 
         <div class="div1">
             <p>
@@ -40,10 +71,15 @@
                         
                             
                     </div>
+>>>>>>> bf81d87689387ea35624bf2459b6107b6acc04d5
                         
                 </div>
                     
             </div>
+<<<<<<< HEAD
+                
+=======
+>>>>>>> bf81d87689387ea35624bf2459b6107b6acc04d5
         </div>
     </body>
     <?php
