@@ -19,14 +19,19 @@
                 <div style = "background-color:#333333; color:#FFFFFF; padding:3px;"><b>Login</b></div>
                     
                 <div style = "margin:30px">
+                    <?php
+                    if ($_SESSION['compteur'] > 0) {
+                        echo "Erreur dans vos entrées. Veuillez réessayer. <br />";
+                    }
+                    ?>
                     <form action = "post-method.php" method = "post">
                     <!-- Je suis ... 
                     <input type="checkbox" name="personne[]" value="medecin">
                     <label for="personne_1"> médecin </label>
                     <input type="checkbox" name="personne[]" value="patient">
                     <label for="personne_2"> patient </label><br> -->
-                    <label>e-mail :      </label><input type = "text" name = "email" class = "box"/><br /><br />
-                    <label>mot de passe :</label><input type = "password" name = "password" class = "box" /><br/><br />
+                    <label>e-mail :      </label><input type = "text" name = "mail" class = "box"/><br /><br />
+                    <label>mot de passe :</label><input type = "password" name = "mdp" class = "box" /><br/><br />
                     <input type = "submit" value = " Submit "/><br />
                     </form>   
                     
