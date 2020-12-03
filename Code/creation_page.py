@@ -40,7 +40,7 @@ def patient(secu):
 
     nom, prenom, naissance, mdp, adresse, mail, numero = donnees
 
-    source = open("../Ressources/squelette_patient.php", "r")
+    source = open("../Ressources/squelettes/squelette_patient.php", "r")
     squelette = source.read()
     source.close()
 
@@ -102,7 +102,7 @@ def medecin(secu):
     nom, prenom, mdp, adresse, numero, mail = donnees
 
 
-    source = open("../Ressources/squelette_medecin.php", "r")
+    source = open("../Ressources/squelettes/squelette_medecin.php", "r")
     squelette = source.read()
     source.close()
 
@@ -161,7 +161,7 @@ def info(secu):
 
     nom, prenom, naissance, mdp, adresse, mail, numero = donnees
 
-    source = open("../Ressources/squelette_info.php", "r")
+    source = open("../Ressources/squelettes/squelette_info.php", "r")
     squelette = source.read()
     source.close()
 
