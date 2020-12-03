@@ -40,14 +40,14 @@ def patient(secu):
 
     nom, prenom, naissance, mdp, adresse, mail, numero = donnees
 
-    source = open("../Ressources/squelette_patient.php", "r")
+    source = open("../Ressources/squelettes/squelette_patient.php", "r")
     squelette = source.read()
     source.close()
 
     fin = len(squelette)
     secu = str(secu)
 
-    page = open(f'../Pages/{secu}.php', "w", encoding="utf-8")
+    page = open(f'../Ressources/Pages/{secu}.php', "w", encoding="utf-8")
 
     # on recopie le squelette jusqu'à tomber sur un symbole µ
 
@@ -102,13 +102,13 @@ def medecin(secu):
     nom, prenom, mdp, adresse, numero, mail = donnees
 
 
-    source = open("../Ressources/squelette_medecin.php", "r")
+    source = open("../Ressources/squelettes/squelette_medecin.php", "r")
     squelette = source.read()
     source.close()
 
     fin = len(squelette)
 
-    page = open("../Pages/med_" + nom + "." + prenom + ".php", "w", encoding="utf-8")
+    page = open("../Ressources/Pages/med_" + nom + "." + prenom + ".php", "w", encoding="utf-8")
 
     # on recopie le squelette jusqu'à tomber sur un symbole µ
 
@@ -161,13 +161,13 @@ def info(secu):
 
     nom, prenom, naissance, mdp, adresse, mail, numero = donnees
 
-    source = open("../Ressources/squelette_info.php", "r")
+    source = open("../Ressources/squelettes/squelette_info.php", "r")
     squelette = source.read()
     source.close()
 
     fin = len(squelette)
 
-    page = open("../Pages/info." + nom + "." + prenom + ".php", "w", encoding="utf-8")
+    page = open("../Ressources/Pages/info." + nom + "." + prenom + ".php", "w", encoding="utf-8")
 
     # on recopie le squelette jusqu'à tomber sur un symbole µ
 
