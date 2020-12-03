@@ -3,14 +3,15 @@
     <head>
         <meta charset="utf-8"/>
         <title>FlowMed</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet"  href="style.css">
         <?php
         $flowmed = new SQLite3('../Ressources/Donnees/flowmed.db');// introduction de la base de données
         ?>
     </head>
     <body>
-    <h1>
+        <h1>
             FlowMed, le futur de la médecine
+            <img src="../Ressources/logo.png" height=80px align="left">
         </h1>
         <p>
             Bienvenue sur FlowMed ! Pour vous inscrire, entrez votre email et créez un mot de passe.

@@ -14,6 +14,7 @@ session_start();
     <body>
         <h1>
             FlowMed, le futur de la médecine
+            <img src="../Ressources/logo.png" height=80px align="left">
         </h1>
         <p>
             Bienvenue sur FlowMed ! Pour accéder à la plateforme en ligne, veuillez vous identifier.
