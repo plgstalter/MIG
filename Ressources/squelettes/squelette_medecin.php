@@ -15,7 +15,7 @@
                 </p>
                 
                 <br />
-                <div style="width:1000px;">
+                <div style="width:1000px; background-color: rgb(255, 222, 209)">
                     <div class = "div3" style="float:left;">
                         <p> 
                             <a href="">Les alertes de mes patients</a>
