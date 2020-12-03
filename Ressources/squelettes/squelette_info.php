@@ -14,21 +14,21 @@
                 <br />
                 <table align=center width = "20%" border = "1" bordercolor = "grey" style="text-align: center; background-color: lightsteelblue;">
                     <tr>
-                        <td>$prenom$</td></tr>
+                        <td>µprenomµ</td></tr>
                     <tr>
-                        <td>$nom$</td></tr>
+                        <td>µnomµ</td></tr>
                     <tr>
-                        <td>$mail$</td></tr>
+                        <td>µmailµ</td></tr>
                     <tr>
-                        <td>$numero$</td></tr>
+                        <td>µnumeroµ</td></tr>
                     <tr>    
-                        <td>$adresse$</td></tr>
+                        <td>µadresseµ</td></tr>
                     <tr>   
-                        <td>$naissance$</td></tr>
+                        <td>µnaissanceµ</td></tr>
                     <tr>
-                        <td>$sexe$</td></tr>
+                        <td>µsexeµ</td></tr>
                     <tr>
-                        <td>$secu$</td></tr>
+                        <td>µsecuµ</td></tr>
         
                 </table>
 

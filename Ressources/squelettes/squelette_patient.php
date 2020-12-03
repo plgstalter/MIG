@@ -11,7 +11,7 @@
             
             <div class="div1" style="height:350px">
                 <h2>Espace patient</h2>
-                <p>Bienvenue sur votre espace, $prenom$ !</p>
+                <p>Bienvenue sur votre espace, µprenomµ !</p>
         
                 <br />
                 <div style="width:1000px; border:1px; background-color:lightblue; background-position: center;">
@@ -22,9 +22,9 @@
                     </div>
                     <div class = "div3" style="text-align:left;float:right">
                         <p>
-                        $nom$ $prenom$ <br /> 
-                        $mail$ <br />
-                        Né le : $date$ <br />
+                        µnomµ µprenomµ <br /> 
+                        µmailµ <br />
+                        Né le : µdateµ <br />
                         </p>
                     </div>
                     <br />

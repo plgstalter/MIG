@@ -11,7 +11,7 @@
             <div class="div1" style="height:350px">
             <h2>Espace médecin</h2>
                 <p>
-                    Bienvenue sur votre espace, $prenom$ !
+                    Bienvenue sur votre espace, µprenomµ !
                 </p>
                 
                 <br />
@@ -23,10 +23,10 @@
                     </div>
                     <div class = "div3" style="float:left; text-align:left; float:right;">
                         <p>
-                            $nom$ $prenom$ <br/>
-                            $adresse$ <br />
-                            $mail$ <br />
-                            $numero$ <br />
+                            µnomµ µprenomµ <br/>
+                            µadresseµ <br />
+                            µmailµ <br />
+                            µnumeroµ <br />
                         </p>
                     </div>
                     <br />
