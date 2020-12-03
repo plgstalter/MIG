@@ -16,8 +16,8 @@
             Bienvenue sur FlowMed ! Pour vous inscrire, entrez votre email et créez un mot de passe.
         </p>
         <div>
-            <div style = "width:400px; border: solid 1px #333333; " align = "left">
-                <div style = "background-color:#333333; color:#FFFFFF; padding:3px;"><b>Login</b></div>
+            <div style = "width:400px; border: solid 1px #333333; background-color: rgb(255, 222, 209); " align = "left">
+                <div style = "background-color:#333333; color:#FFFFFF; padding:3px;"><b>Register</b></div>
                     
                 <div style = "margin:30px" align="right">
                     <?php
