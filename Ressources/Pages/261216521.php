@@ -11,7 +11,7 @@
             
             <div class="div1" style="height:350px">
                 <h2>Espace patient</h2>
-                <p>Bienvenue sur votre espace, µprenomµ !</p>
+                <p>Bienvenue sur votre espace, Greg !</p>
         
                 <br />
                 <div style="width:1000px; border:1px; background-color:lightblue; background-position: center;">
@@ -22,9 +22,9 @@
                     </div>
                     <div class = "div3" style="text-align:left;float:right">
                         <p>
-                        µnomµ µprenomµ <br /> 
-                        µmailµ <br />
-                        Né le : µnaissanceµ <br />
+                        Guillotin Greg <br /> 
+                        paul.guillot@mines-paristech.fr <br />
+                        Né le : null <br />
                         </p>
                     </div>
                     <br />
@@ -48,4 +48,4 @@
                 </div>
             </div>
         </body>
-    </html>
+    </html
