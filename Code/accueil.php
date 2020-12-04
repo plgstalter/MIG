@@ -25,16 +25,16 @@ session_start();
                     
                 <div style = "margin:30px" align="right">
                     <?php
-                    if (isset($_SESSION['compteur'])) {
-                        echo "Erreur dans vos entrées. Veuillez réessayer. <br />";
+                    if ($_SESSION['erreur'] != '') {
+                        echo $_SESSION['erreur'];
                     }
                     ?>
                     <form action = "post-method.php" method = "post">
-                    <!-- Je suis ... 
-                    <input type="checkbox" name="personne[]" value="medecin">
+                    Je suis ... 
+                    <input type="checkbox" name="personne" value="medecin">
                     <label for="personne_1"> médecin </label>
-                    <input type="checkbox" name="personne[]" value="patient">
-                    <label for="personne_2"> patient </label><br> -->
+                    <input type="checkbox" name="personne" value="patient">
+                    <label for="personne_2"> patient </label><br>
                     <label>e-mail :      </label><input type = "text" name = "mail" class = "box"/><br /><br />
                     <label>mot de passe :</label><input type = "password" name = "mdp" class = "box" /><br/><br />
                     <input type = "submit" value = " Submit "/><br />
