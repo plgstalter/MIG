@@ -30,6 +30,11 @@ session_start();
                     }
                     ?>
                     <form action = "post-register.php" method = "post">
+                    Je suis ... 
+                    <input type="checkbox" name="personne" value="medecin">
+                    <label for="personne_1"> médecin </label>
+                    <input type="checkbox" name="personne" value="patient">
+                    <label for="personne_2"> patient </label><br>
                     <label>e-mail :      </label><input type = "text" name = "mail" class = "box"/><br /><br />
                     <label>mot de passe :</label><input type = "password" name = "mdp" class = "box" /><br/><br />
                     <label>confirmer le mot de passe :</label><input type = "password" name = "mdp" class = "box" /><br/><br />
