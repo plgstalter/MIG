@@ -1,5 +1,5 @@
 <?php
-session_start();
-if (session_destroy()) {
-    header("location: accueil.php");
-}
+session_destroy();
+header("location: accueil.php");
+exit;
+?>
