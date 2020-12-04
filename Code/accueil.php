@@ -38,11 +38,8 @@ session_start();
                     <label>e-mail :      </label><input type = "text" name = "mail" class = "box"/><br /><br />
                     <label>mot de passe :</label><input type = "password" name = "mdp" class = "box" /><br/><br />
                     <input type = "submit" value = " Submit "/><br />
-                    </form>  
-                    
-                    Pas encore de compte ? <a href="register.php"> S'inscire </a>
-                    
-                        
+                    </form>                    
+                    Pas encore de compte ? <a href="register.php"> S'inscire </a>     
                 </div>
                     
             </div>

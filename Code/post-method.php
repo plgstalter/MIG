@@ -11,10 +11,16 @@ elseif ($_REQUEST['mail'] == '') {
 }
 $_SESSION['mail'] = "'".$_REQUEST['mail']."'";
 $flowmed = new SQLite3('../Ressources/Donnees/flowmed.db');  // introduction de la base de données
-$statement = $flowmed -> prepare("SELECT secu, mdp FROM :imaginary_table WHERE mail = :imaginary_mail");
-$statement -> bindValue(':imaginary_table', $_POST['personne'].'s');
-$statement -> bindValue(':imaginary_mail', $_SESSION['mail']);
-$result = $statement -> execute();
+if ($_POST['personne'] == 'patient') {
+    $statement = $flowmed -> prepare("SELECT secu, mdp FROM patients WHERE mail = :imaginary_mail");
+    $statement -> bindValue(':imaginary_mail', $_SESSION['mail']);
+    $result = $statement -> execute();
+}
+elseif ($_POST['personne'] == 'medecin') {
+    $statement = $flowmed -> prepare("SELECT secu, mdp FROM medecins WHERE mail = :imaginary_mail");
+    $statement -> bindValue(':imaginary_mail', $_SESSION['mail']);
+    $result = $statement -> execute();
+}
 if ($result == 0) {
     $_SESSION['erreur'] = 'mauvais login. Veuillez réessayer';
     header('location: accueil.php');
@@ -22,11 +28,11 @@ if ($result == 0) {
 while ($row = $result->fetchArray()) {
     $_SESSION['secu'] = $row['secu'];
     $_SESSION['mdp'] = $row['mdp'];
-    $url = '../Ressources/Pages/'.$_POST['personne'].'s'.$_SESSION['secu'].'.php';
+    $url = '../Ressources/Pages/'.$_POST['personne'].'.'.$_SESSION['secu'].'.php';
 }
-$command = escapeshellcmd('python python_php/hache_mdp.py '.$_REQUEST['mdp']); // on hache le mdp pour le comparer
+$command = escapeshellcmd('python hache_mdp.py '.$_REQUEST['mdp']); // on hache le mdp pour le comparer
 $mdp_hache = shell_exec($command);
-if ($mdp_hache == $_SESSION['mdp']) {
+if (strcmp($mdp_hache, $_SESSION['mdp'])) {
     $_SESSION['erreur'] = '';
     $_SESSION['connecte'] = TRUE;
     header('location: '.$url); // si on est bon, on envoie sur la page du patient
