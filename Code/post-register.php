@@ -30,7 +30,7 @@ if ($_REQUEST['mdp_2'] != $_REQUEST['mdp']) {
 }
 $_SESSION['erreur'] = '';
 $_SESSION['connecte'] = TRUE;
-$command = escapeshellcmd('python python_php/ajout_mdp.py '.$_REQUEST['mdp'].' '.$_SESSION['secu']);
+$command = escapeshellcmd('python ajout_mdp.py '.$_REQUEST['mdp'].' '.$_SESSION['secu']);
 $output = shell_exec($command);
 header('location: '.$url); // si on est bon, on envoie sur la page du patient
 $flowmed = null; // on se sépare de la base de données à la fin de la page
