@@ -14,7 +14,7 @@
                 <p>Bienvenue sur votre espace, Greg !</p>
         
                 <br />
-                <div style="width:1000px; border:1px; background-color:lightblue; background-position: center;">
+                <div style="width:1000px; border:1px; background-position: center;">
                     <div class = "div3" style="float:left;">
                         <p>
                             <a href="">Mes questionnaires</a>
