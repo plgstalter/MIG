@@ -4,7 +4,7 @@
         <head>
             <meta charset="utf-8"/>
             <title>Espace Patient</title>
-            <link rel="stylesheet" href="style.css">
+            <link rel="stylesheet" href="../style.css">
         </head>
         <body>
             <h1>FlowMed, le futur de la médecine</h1>
@@ -14,16 +14,17 @@
                     <h2>Espace patient</h2>
                     <p>Bienvenue sur votre espace, Elodie !</p>
                 </div>
-                <div class = "div1" style="float:right">
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <div style="float:right">
                     <a href="../../Code/logout.php"> Déconnexion</a>
                 </div>        
                 <br />
                 <div style="width:1000px; border:1px; background-color: rgb(255, 222, 209); background-position: center;">
-                    <div class = "div3" style="float:left;">
-                        <p>
-                            <a href="../../Code/questionnaire_covid.php">Mes questionnaires</a>
-                        </p>
-                    </div>
                     <div class = "div3" style="text-align:left;float:right">
                         <p>
                         Tété Elodie <br /> 
@@ -44,24 +45,17 @@
                         ?>
                         </p>
                     </div>
-                    <br />
-                    <br />
-                    <br />
-                    <br />
                     <div class = "div3" style="float:left;">
+                        <p>
+                            <a href="../../Code/questionnaire_covid.php">Mes questionnaires</a>
+                        </p>
                         <p>
                             <a href="">Mon suivi</a>
                         </p>
-                    </div>
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <div class = "div3" style=" float:left;">
                         <p>
                             <a href="">Mes informations personnelles</a>
-                        </p>
-                    </div>
+                        </p> 
+                </div>
                 </div>
             </div>
         </body>
