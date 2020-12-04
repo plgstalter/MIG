@@ -37,7 +37,7 @@ session_start();
                     <label for="personne_2"> patient </label><br>
                     <label>e-mail :      </label><input type = "text" name = "mail" class = "box"/><br /><br />
                     <label>mot de passe :</label><input type = "password" name = "mdp" class = "box" /><br/><br />
-                    <label>confirmer le mot de passe :</label><input type = "password" name = "mdp" class = "box" /><br/><br />
+                    <label>confirmer le mot de passe :</label><input type = "password" name = "mdp_2" class = "box" /><br/><br />
                     <input type = "submit" value = " Submit "/><br />
                     </form>    
                 </div>
