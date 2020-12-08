@@ -24,4 +24,6 @@ On a fait une plateforme codée en `html` et `PHP`. Les bases de données pour m
 
 ### Sécurité
 
-Le site n'est pas sécurisé (mots de passe, informations des patients). Ce n'est pas trop dérangeant car ce n'est qu'une maquette pour montrer ce que l'on aimerait mettre en place dans un projet viable.
+Le site est à présent sécurisé : les mots de passe des utilisateurs sont hachés. Ainsi nous ne connaissons pas les mots de passe de nos membres, et sommes seulement en mesure de vérifier que le mot de passe entré est le bon.
+
+De plus, l'accès aux pages est sécurisé : lorsque le site tourne sous `localhost`, on ne peut accéder à la page d'un patient/médecin que si on est connecté avec le bon `login`.
