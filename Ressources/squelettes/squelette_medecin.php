@@ -1,3 +1,13 @@
+<?php
+session_start();
+$secu = µsecuµ;
+// on commence par vérifier si on est bien connecté
+// pour assurer la sécurité du site
+if ($secu != $_SESSION['secu']) {
+    header('location: ../../Code/accueil.php');
+    exit;
+}
+?>
 <DOCTYPE html>
     <html lang="fr">
         <head>

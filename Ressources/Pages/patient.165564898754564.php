@@ -1,4 +1,13 @@
-
+<?php
+session_start();
+$secu = 165564898754564;
+// on commence par vérifier si on est bien connecté
+// pour assurer la sécurité du site
+if ($secu != $_SESSION['secu']) {
+    header('location: ../../Code/accueil.php');
+    exit;
+}
+?>
 <DOCTYPE html>
     <html lang="fr">
         <head>
@@ -8,7 +17,6 @@
         </head>
         <body>
             <h1>FlowMed, le futur de la médecine</h1>
-            
             <div class="div1" style="height:350px">
                 <div style="float:left">
                     <h2>Espace patient</h2>
