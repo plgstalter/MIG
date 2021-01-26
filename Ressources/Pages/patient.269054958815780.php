@@ -16,7 +16,9 @@ if ($secu != $_SESSION['secu']) {
             <link rel="stylesheet" href="../style.css">
         </head>
         <body>
-            <h1>FlowMed, le futur de la médecine</h1>
+            <h1>FlowMed, le futur de la médecine
+            <img src="../logo.png" height=80px align="left">
+            </h1>
             <div class="div1" style="height:350px">
                 <div style="float:left">
                     <h2>Espace patient</h2>
