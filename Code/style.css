@@ -1,11 +1,12 @@
 body {
-    background-color: rgb(228, 250, 250);
+    background-color: rgb(150, 240, 225);
 }
 
 h1 {
-    background-color:rgb(255, 222, 209); ;
+    background-color:rgb(48, 62, 78);
     text-align: center;
     font-family: Verdana;
+    color: white;
     height: 80px;
     border: 1px solid black;
 }
@@ -25,7 +26,8 @@ p {
 }
 
 .div3 {
-    background-color:  rgb(218, 238, 238);
+    background-color: rgb(48, 62, 78);
+    color: white;
     font-family: Verdana;
     width:200px;
     height:auto;
@@ -36,7 +38,7 @@ p {
 }
 
 .div1 {
-    background-color: rgb(255, 222, 209);
+    background-color:rgb(88, 185, 157);
     width: 1000px;
     border: 1px solid black;
     padding: 50px;
