@@ -55,13 +55,13 @@ if ($secu != $_SESSION['secu']) {
                     </div>
                     <div class = "div3" style="float:left;">
                         <p>
-                            <a href="../../Code/questionnaire_covid.php">Mes questionnaires</a>
+                            <a href="../../Code/questionnaire_covid.php" style="color: white">Mes questionnaires</a>
                         </p>
                         <p>
-                            <a href="">Mon suivi</a>
+                            <a href="" style="color: white">Mon suivi</a>
                         </p>
                         <p>
-                            <a href="">Mes informations personnelles</a>
+                            <a href="" style="color: white">Mes informations personnelles</a>
                         </p> 
                 </div>
                 </div>

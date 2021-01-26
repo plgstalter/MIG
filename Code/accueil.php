@@ -20,12 +20,12 @@ session_start();
             Bienvenue sur FlowMed ! Pour accéder à la plateforme en ligne, veuillez vous identifier.
         </p>
         <div>
-            <div style = "width:350px; border: solid 1px #333333; background-color: rgb(255, 222, 209);" align = "left">
+            <div style = "width:350px; border: solid 1px #333333; background-color: rgb(48, 62, 78); font-family: Verdana; color: white;" align = "left">
                 <div style = "background-color:#333333; color:#FFFFFF; padding:3px;"><b>Login</b></div>
                     
                 <div style = "margin:30px" align="right">
                     <?php
-                    if ($_SESSION['erreur'] != '') {
+                    if (isset($_SESSION['erreur'])) {
                         echo $_SESSION['erreur'];
                     }
                     ?>
@@ -39,7 +39,7 @@ session_start();
                     <label>mot de passe :</label><input type = "password" name = "mdp" class = "box" /><br/><br />
                     <input type = "submit" value = " Submit "/><br />
                     </form>                    
-                    Pas encore de compte ? <a href="register.php"> S'inscire </a>     
+                    Pas encore de compte ? <a href="register.php" style="color: white"> S'inscire </a>     
                 </div>
                     
             </div>

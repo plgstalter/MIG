@@ -9,5 +9,8 @@ $_REQUEST['gene_respir_score'];
 $_REQUEST['temperature_score'];
 $_REQUEST['saturation_score'];
 $_REQUEST['nausea_score'];
+$url = '../Ressources/Pages/'.$_SESSION['personne'].'.'.$_SESSION['secu'].'.php';
 $flowmed = null;
+header('location: '.$url);
+exit;
 ?>

@@ -3,6 +3,7 @@ session_start();
 if (empty($_POST['personne'])){
     $_SESSION['erreur'] = 'Veuillez sélectionner médecin/patient';
     header('location: register.php');
+    exit;
 }
 elseif ($_REQUEST['mail'] == '') {
     $_SESSION['erreur'] = "Veuillez renseigner un email";

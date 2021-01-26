@@ -20,7 +20,7 @@ session_start();
             Bienvenue sur FlowMed ! Veuillez rentrer les informations relatives au questionnaire.
         </p>
         <div>
-            <div style = "width:450px; border: solid 1px #333333; background-color: rgb(255, 222, 209);" align = "left">
+            <div style = "width:450px; border: solid 1px #333333; background-color: rgb(48, 62, 78); font-family: Verdana; color: white;" align = "left">
                 <div style = "background-color:#333333; color:#FFFFFF; padding:3px;"><b>Questionnaire</b></div>
                     
                 <div style = "margin:30px" align="right">
@@ -41,7 +41,7 @@ session_start();
                 
         </div>
     </body>
-<?php 
+<?php
 $flowmed = null;
 ?>
 </html>
